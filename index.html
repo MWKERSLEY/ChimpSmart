@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/animate.css">
+        <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+        <title>Smarter Than A Chimp?</title>
+    </head>
+    <body>
+        <div class="fullscreen-bg">
+            <video loop muted autoplay poster="/image/MonkeyBackground.png" class="fullscreen-bg__video">
+                <source src="video/MonkeyBackground.webm" type="video/webm">
+                <source src="video/MonkeyBackground.mp4" type="video/mp4">
+                <source src="video/MonkeyBackground.ogv" type="video/ogg">
+                <img src="image/MonkeyBackground.png" title="Your browser is too old for my cool background video." />
+            </video>
+        </div>
+        <header>
+            <h1 class="animated bounceIn">Are You Smarter Than A Chimp?</h1>
+        </header>
+        <section class="clearSection" id="details">
+            <article id="testDescription" class="animated bounceInLeft">
+                Ayumu the chimp was given memory tests. He would be shown numbers on a screen, then have to recall their positions.<br><br>No human being will ever match Ayumu.<br><br>Don't believe it? Try beating level 10!
+            </article>
+            <h2 id="testButton" class="animated bounceInRight">Take The Test!</h2>
+            <h2 id="vidButton" class="animated bounceInRight">Watch Video</h2>
+        </section>
+        <section id="testSection" class="animated fadeInUp">
+            <div id="numberGrid">
+                <div class="numberRow">
+                    <div class="numberButton row1 column1"></div>
+                    <div class="numberButton row1 column2"></div>
+                    <div class="numberButton row1 column3"></div>
+                    <div class="numberButton row1 column4"></div>
+                    <div class="numberButton row1 column5"></div>
+                    <div class="numberButton row1 column6"></div>
+                    <div class="numberButton row1 column7"></div>
+                    <div class="numberButton row1 column8"></div>
+                </div>
+                <div class="numberRow">
+                    <div class="numberButton row2 column1"></div>
+                    <div class="numberButton row2 column2"></div>
+                    <div class="numberButton row2 column3"></div>
+                    <div class="numberButton row2 column4"></div>
+                    <div class="numberButton row2 column5"></div>
+                    <div class="numberButton row2 column6"></div>
+                    <div class="numberButton row2 column7"></div>
+                    <div class="numberButton row2 column8"></div>
+                </div>
+                <div class="numberRow">
+                    <div class="numberButton row3 column1"></div>
+                    <div class="numberButton row3 column2"></div>
+                    <div class="numberButton row3 column3"></div>
+                    <div class="numberButton row3 column4"></div>
+                    <div class="numberButton row3 column5"></div>
+                    <div class="numberButton row3 column6"></div>
+                    <div class="numberButton row3 column7"></div>
+                    <div class="numberButton row3 column8"></div>
+                </div>
+                <div class="numberRow">
+                    <div class="numberButton row4 column1"></div>
+                    <div class="numberButton row4 column2"></div>
+                    <div class="numberButton row4 column3"></div>
+                    <div class="numberButton row4 column4"></div>
+                    <div class="numberButton row4 column5"></div>
+                    <div class="numberButton row4 column6"></div>
+                    <div class="numberButton row4 column7"></div>
+                    <div class="numberButton row4 column8"></div>
+                </div>
+                <div class="numberRow">
+                    <div class="numberButton row5 column1"></div>
+                    <div class="numberButton row5 column2"></div>
+                    <div class="numberButton row5 column3"></div>
+                    <div class="numberButton row5 column4"></div>
+                    <div class="numberButton row5 column5"></div>
+                    <div class="numberButton row5 column6"></div>
+                    <div class="numberButton row5 column7"></div>
+                    <div class="numberButton row5 column8"></div>
+                </div>
+            </div>
+            <div id="options">
+                <div id="beginButton">Start</div>
+                <div>Level:<span id="levelNumber">1</span></div>
+                <figure id="peanut">
+                    <img height="100" width="100" src="image/peanut.png">
+                </figure>
+                <div id="reset">Reset</div>
+                <div id="quitButton">Quit</div>
+            </div>
+        </section>
+        <footer>
+            <p>Site by <a href="http://www.MatthewKersley.co.uk">MatthewKersley.co.uk</a></p>
+        </footer>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zsXP8qeFF6A?modestbranding=1&iv_load_policy=3&cc_load_policy=1&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/script.js"></script>
+</html>

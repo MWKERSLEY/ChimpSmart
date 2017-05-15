@@ -1,0 +1,325 @@
+* {
+    text-align: center;
+    color: rgba(19,37,38, 0.9);
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+header {
+    margin: auto;
+    padding: 10px;
+    font-size: 6vw;
+}
+h1 {
+    font-family: 'Krona One', sans-serif;
+    margin: 4vh auto 7vh auto;
+    padding: 2vh 2vw;
+    font-size: 4vw;
+    width: 90vw;
+    color: rgba(19,37,38, 0.9);
+    border: 2px solid rgba(65,94,128,0.5);
+    background-color: rgba(128,68,65,0.7);
+    border-radius: 5vw;
+    animation-iteration-count: 1;
+    animation-duration: 0.1s;
+    box-shadow: 3px 3px 20px 6px black;
+    transition: all 0.5s ease-in-out 0s;
+    animation-delay: 1s;
+}
+
+h2 {
+    font-family: 'Krona One', sans-serif;
+    position: relative;
+    float: right;
+    margin: 2.5vh 8vw;
+    padding: 1vh 1vw;
+    animation-delay: 1s;
+    background-color: red;
+    font-size: 4vw;
+    width: 7em;
+    height: 10vw;
+    color: rgba(19,37,38, 0.9);
+    border: 1px solid rgba(65,94,128,0.5);
+    background-color: rgba(128,68,65,0.7);
+    border-radius: 5vw;
+    box-shadow: 3px 3px 20px 6px black;
+    transition: all 0.5s ease-in-out 0s;
+    animation-delay: 2s;
+}
+
+h2:hover {
+    cursor: pointer;
+    color: aliceblue;
+    border: 1vw solid rgba(65,94,128,0.5);
+    margin: 1.6vh 7vw;
+}
+
+#testDescription {
+    margin: 3vh 1vw 3vh 5vw;
+    padding: 3vh 1vw;
+    width: 40vw;
+    font-family: 'Krona One', sans-serif;
+    font-size: 2vw;
+    position: relative;
+    animation-delay: 2s;
+    color: rgba(19,37,38, 0.9);
+    border: 1px solid rgba(65,94,128,0.5);
+    background-color: rgba(128,68,65,0.7);
+    border-radius: 5vw;
+    box-shadow: thick;
+    box-shadow: 3px 3px 20px 6px black;
+    float: left;
+    transition: all 0.5s ease-in-out 0s;
+}
+footer {
+    margin: 0;
+    padding: 0;
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+footer p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1vh;
+    width: auto;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    float: right;
+    color: aliceblue !important;
+}
+footer p a {
+    color: aliceblue;
+}
+#levelIndicator {
+    font-size: 3em;
+    border: 3px solid black;
+    width: 10em;
+    margin: auto;
+    visibility: hidden;
+}
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+}
+ 
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 65px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+    padding: 0;
+    /*border: 1px solid #888;*/
+    width: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top:-300px;
+        opacity:0
+    } 
+    to {
+        top:0;
+        opacity:1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top:-300px;
+        opacity:0
+    }
+    to {
+        top:0;
+        opacity:1
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 0px;
+    left: 830px;
+    color: white;
+    /*color: rgba(54, 91, 70, 1);*/
+    font-size: 50px;
+    font-weight: bold;
+    z-index: 100;
+    text-shadow: 2px 1px red;
+   
+}
+
+.close:hover,
+.close:focus {
+    color: rgba(54, 91, 70, 0.5);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/*The video Styles*/
+
+.myVideo {
+    
+    position: relative;
+    width: 100%;
+    margin: 13px auto 4px auto !important;
+   
+    
+}
+
+.clearSection {
+    position: relative;
+    clear: both;
+    display: block;
+    overflow: auto;
+    overflow-x: hidden;
+}
+#testSection {
+    position: relative;
+    clear: both;
+    height: 500px;
+    width: 100%;
+    display: none;
+    padding: 0;
+}
+.numberButton {
+    width: 9%;
+    height: 75px;
+    background-color: white;
+    margin: 1%;
+    display: inline-block;
+    max-width: 75px;
+    padding: 0;
+    color: white;
+    font-size: 50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.numberRow {
+    clear: both;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0;
+}
+
+
+#numberGrid {
+    display: block;
+    clear: both;
+    padding: 20px 0 0 0;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.hide {
+    position: absolute;
+}
+
+#peanut {
+    opacity: 1;
+}
+
+#options {
+    margin: 0 auto 20px auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+#options div {
+    display: inline-block;
+    padding: 10px;
+    width: 12%;
+    color: white;
+    margin: auto;
+    font-size: 2em;
+    top: 0;
+    vertical-align: middle;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 1px solid rgba(65,94,128,0.5);
+    border-radius: 5vw;
+    border: 1px solid rgba(65,94,128,0.5);
+    border-radius: 5vw;
+    box-shadow: 3px 3px 20px 6px black;
+    transition: all 0.5s ease-in-out 0s;
+    animation-delay: 2s;
+    margin: 0 9px;
+}
+
+#options figure {
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#options div:hover {
+    cursor: pointer;
+    color: aliceblue;
+    border: 10px solid rgba(65,94,128,0.5);
+    margin: 0;
+}
+#options span {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+
+@media screen only and (max-width: 767px) {
+    .fullscreen-bg {
+        background-image: url("/image/MonkeyBackground.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
