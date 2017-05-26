@@ -42,13 +42,19 @@ document.getElementById('testButton').addEventListener('click', testFunction);
 //Start A New Level
 document.getElementById('beginButton').addEventListener('click', beginFunction);
 
+//quit
 document.getElementById('quitButton').addEventListener('click', quitFunction);
 
+//reset
 document.getElementById('reset').addEventListener('click', resetFunction);
 
 function testFunction() {
     document.getElementById('testSection').style.display= "block";
-    document.getElementById('details').className = "animated fadeOutUp clearSection hide";
+    document.getElementById('details').className = "animated fadeOutUpBig clearSection hide";
+    window.scrollTo(0,document.body.scrollHeight);
+    setTimeout(function() {
+        window.scrollTo(0,document.body.scrollHeight);
+    },100);
 }
 
 function quitFunction() {
@@ -58,6 +64,17 @@ function quitFunction() {
 
 function resetFunction() {
     document.getElementById('levelNumber').innerHTML=1;
+    document.getElementById('beginButton').className="startFlash";
+    document.getElementById('correctText').className="";
+    document.getElementById('wrongText').className="";
+    document.getElementById('resetText').className="";
+    document.getElementById('resetText').className = "animated fadeIn";
+    setTimeout(function() {
+        if (document.getElementById('resetText').className == "animated fadeIn") {
+            document.getElementById('resetText').className = "animated fadeOut";
+        }
+
+    }, 3000);
     clearButtons();
 }
 
@@ -86,6 +103,10 @@ function coverNumbers(roundNumber) {
 }
 
 function beginFunction(){
+    document.getElementById('beginButton').className="";
+    document.getElementById('correctText').className="";
+    document.getElementById('wrongText').className="";
+    document.getElementById('resetText').className="";
     currentRoundNumber++;
     isCovered = false;
     level = parseInt(document.getElementById('levelNumber').innerHTML);
@@ -146,18 +167,27 @@ function numberButtonClickFunction(ev) {
     if (buttonNum==nextNum) {
         //for all correct numbers
         click.play();
+        button.style.cursor= "inherit";
         //if it's the first number
         if (buttonNum==1) {
             coverNumbers(currentRoundNumber);
         }
         //if it's the last number
         if (numberButtonList.length==1) {
+            document.getElementById('beginButton').className="startFlash";
             level = Math.min(level+1, 10);
             localStorage.setItem('level', level.toString());
             document.getElementById('levelNumber').innerHTML = level;
             document.getElementById('peanut').className = "animated fadeIn";
             setTimeout(function() {
                 document.getElementById('peanut').className = "animated fadeOut";
+            }, 3000);
+            document.getElementById('correctText').className = "animated fadeIn";
+            setTimeout(function() {
+                if (document.getElementById('correctText').className == "animated fadeIn") {
+                    document.getElementById('correctText').className = "animated fadeOut";
+                }
+                
             }, 3000);
             setTimeout(function() {
                 win.play();
@@ -169,59 +199,14 @@ function numberButtonClickFunction(ev) {
         numberButtonList.splice(0,1);
     } else {
         //for incorrect picks
+        document.getElementById('beginButton').className="startFlash";
+        document.getElementById('wrongText').className = "animated fadeIn";
+        setTimeout(function() {
+            if (document.getElementById('wrongText').className == "animated fadeIn") {
+                document.getElementById('wrongText').className = "animated fadeOut";
+            }
+
+        }, 3000);
         clearButtons();
     }
 }
-/* function firstNumberFunction(ev) {
-    console.log(ev.target.number);
-    coverNumbers();
-    //if it's the next number
-        console.log(ev.target);
-    console.log(numberButtonList[0]);
-    if (ev.target.number==numberButtonList[0].number) {
-        ev.target.style.backgroundColor= "transparent";
-        ev.target.number=null;
-        ev.target.innerHTML="";
-        ev.target.removeEventListener('click', firstNumberFunction);
-        numberButtonList.splice(0,1);
-    } else {
-        //if it's the wrong number
-
-        //clear starting page
-        clearButtons();
-
-    }
-}*/
-
-/////////////////////////
-/*//set onlick actions
-if (i==0) {
-    nextButton.addEventListener('click', firstNumberFunction);
-} else if (i==(numberOfNumbers-1)){
-    //add action on the final button
-    nextButton.addEventListener('click', function(ev) {
-        console.log(ev.target.number);
-        clearButtons();
-        level++;
-        document.getElementById('levelNumber').innerHTML=level;
-        document.getElementById('peanut').style.opacity=1;
-    });
-} else {
-    nextButton.addEventListener('click', function(ev) {
-        console.log(ev.target.number);
-        //if it's the next number
-        if (ev.target.number==numberButtonList[0].number) {
-            ev.target.style.backgroundColor= "transparent";
-            ev.target.number=null;
-            ev.target.innerHTML="";
-            ev.target.removeEventListener('click');
-            numberButtonList.splice(0,1);
-        } else {
-            //if it's the wrong number
-
-            //clear starting page
-            clearButtons();
-
-        }
-    });
-}*/

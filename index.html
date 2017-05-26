@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="fullscreen-bg">
-            <video loop muted autoplay poster="/image/MonkeyBackground.png" class="fullscreen-bg__video">
+            <video loop muted autoplay poster="image/MonkeyBackground.png" class="fullscreen-bg__video">
                 <source src="video/MonkeyBackground.webm" type="video/webm">
                 <source src="video/MonkeyBackground.mp4" type="video/mp4">
                 <source src="video/MonkeyBackground.ogv" type="video/ogg">
@@ -22,13 +22,16 @@
         </header>
         <section class="clearSection" id="details">
             <article id="testDescription" class="animated bounceInLeft">
-                Ayumu the chimp was given memory tests. He would be shown numbers on a screen, then have to recall their positions.<br><br>No human being will ever match Ayumu.<br><br>Don't believe it? Try beating level 10!
+                Ayumu the chimp was given memory tests. He would be shown numbers on a screen, then have to recall their positions in order.<br><br>No human being will ever be as good as Ayumu.<br><br>Don't believe it? Try beating level 10!
             </article>
             <h2 id="testButton" class="animated bounceInRight">Take The Test!</h2>
             <h2 id="vidButton" class="animated bounceInRight">Watch Video</h2>
         </section>
         <section id="testSection" class="animated fadeInUp">
             <div id="numberGrid">
+                <div id="correctText"><div>Correct!</div></div>
+                <div id="wrongText"><div>Wrong!</div></div>
+                <div id="resetText"><div>Reset</div></div>
                 <div class="numberRow">
                     <div class="numberButton row1 column1"></div>
                     <div class="numberButton row1 column2"></div>
@@ -81,8 +84,8 @@
                 </div>
             </div>
             <div id="options">
-                <div id="beginButton">Start</div>
-                <div>Level:<span id="levelNumber">1</span></div>
+                <div id="beginButton" class="startFlash">Start</div>
+                <div id="levelButton">Level:<span id="levelNumber">1</span></div>
                 <figure id="peanut">
                     <img height="100" width="100" src="image/peanut.png">
                 </figure>
@@ -95,11 +98,11 @@
         </footer>
         <div id="myModal" class="modal">
             <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                </div>
                 <div class="modal-body">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zsXP8qeFF6A?modestbranding=1&iv_load_policy=3&cc_load_policy=1&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/zsXP8qeFF6A?modestbranding=1&iv_load_policy=3&cc_load_policy=1&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="modal-header">
+                    <span class="close">Close</span>
                 </div>
             </div>
         </div>
